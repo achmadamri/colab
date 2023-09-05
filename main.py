@@ -14,7 +14,7 @@ db = {
         "username": "tim",
         "full_name": "Tim Ruscica",
         "email": "tim@gmail.com",
-        "hashed_password": "$2b$12$HxWHkvMuL7WrZad6lcCfluNFj1/Zp63lvP5aUrKlSTYtoFzPXHOtu",
+        "hashed_password": "$2b$12$pbUsQSvdxB8auBItGhzSTO5Lhgv1zXKLKGN1xR.NSkINgoxfNv1tS",
         "disabled": False
     }
 }
@@ -47,6 +47,7 @@ app = FastAPI()
 
 
 def verify_password(plain_password, hashed_password):
+    print(pwd_context.hash(plain_password))
     return pwd_context.verify(plain_password, hashed_password)
 
 
